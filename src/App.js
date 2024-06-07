@@ -5,6 +5,7 @@ import Service from '@/pages/Service';
 import Contact from '@/pages/Contact';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Error from '@/_utils/Error';
+import Layout from '@/pages/Layout';
 
 function App() {
   return (
@@ -12,12 +13,17 @@ function App() {
     
       <BrowserRouter>
         <Routes>
-
-         <Route index element={<Home />} />     
+        <Route element={<Layout/>}>
+        
+        <Route index element={<Home />} />     
         <Route path="/home" element={<Home />} />
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error/>} />
+
+        </Route>
+
+       
 
         </Routes>
       </BrowserRouter>
